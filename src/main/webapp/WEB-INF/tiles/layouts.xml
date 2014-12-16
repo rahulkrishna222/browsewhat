@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+
+	<!-- The main definition with the header footer menu and body -->
+	<definition name="base.definition" template="/WEB-INF/views/home.jsp">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/views/jsp/header_main.jsp"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/jsp/main_menu.jsp"></put-attribute>
+		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/views/jsp/footer_link.jsp"></put-attribute>
+	</definition>
+
+	<!-- Now you can specify as many layours as you want... The name will match 
+		the names the -->
+	<!-- HomeController.java returns aka... as we specified it as displayPageContent1 
+		and displayPageContent2 -->
+	<!-- You can override each of the base.definition entries. In this we change 
+		the page title and display a different -->
+	<!-- page as the body. As we didn't override the menu of footer it will 
+		display as specified in tha base.defition -->
+	<definition name="displayPageContent1" extends="base.definition">
+		<put-attribute name="title" value="Page context 1 displaying..."></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/jsp/content.jsp"></put-attribute>
+	</definition>
+
+	<definition name="displayPageContent2" extends="base.definition">
+		<put-attribute name="title" value="Employees List"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/jsp/content.jsp"></put-attribute>
+	</definition>
+
+	<definition name="mainPage" extends="base.definition">
+		<put-attribute name="title"
+			value="This is the home page being displayed....."></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/jsp/home_main.jsp"></put-attribute>
+	</definition>
+
+</tiles-definitions>
