@@ -7,11 +7,13 @@
 
 	<!-- The main definition with the header footer menu and body -->
 	<definition name="base.definition" template="/WEB-INF/views/home.jsp">
-		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="title" value="Browse What ???"></put-attribute>
+		<put-attribute name="head" value="/WEB-INF/views/jsp/head.jsp"></put-attribute>
+		<put-attribute name="logo" value="/WEB-INF/views/jsp/logo.jsp"></put-attribute>
 		<put-attribute name="header" value="/WEB-INF/views/jsp/header_main.jsp"></put-attribute>
-		<put-attribute name="menu" value="/WEB-INF/views/jsp/main_menu.jsp"></put-attribute>
-		<put-attribute name="body" value=""></put-attribute>
-		<put-attribute name="footer" value="/WEB-INF/views/jsp/footer_link.jsp"></put-attribute>
+		<put-attribute name="main_menu" value="/WEB-INF/views/jsp/main_menu.jsp"></put-attribute>
+		<put-attribute name="content" value=""></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/views/jsp/footer.jsp"></put-attribute>
 	</definition>
 
 	<!-- Now you can specify as many layours as you want... The name will match 
@@ -32,10 +34,9 @@
 		<put-attribute name="body" value="/WEB-INF/views/jsp/content.jsp"></put-attribute>
 	</definition>
 
-	<definition name="mainPage" extends="base.definition">
-		<put-attribute name="title"
-			value="This is the home page being displayed....."></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/jsp/home_main.jsp"></put-attribute>
+	<definition name="home" extends="base.definition">
+
+		<put-attribute name="content" value="/WEB-INF/views/jsp/content.jsp"></put-attribute>
 	</definition>
 
 </tiles-definitions>

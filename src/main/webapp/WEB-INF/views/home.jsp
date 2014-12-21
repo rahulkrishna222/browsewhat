@@ -1,34 +1,38 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Spring MVC - Tiles Integration tutorial</title>
-	<link rel="stylesheet" href="resources/css/screen.css" 
-      type="text/css" media="screen, projection"></link>
-	<link rel="stylesheet" href="resources/css/print.css" 
-      type="text/css" media="print"></link>
-	<!--[if IE]>
-	<link rel="stylesheet" href="resources/css/ie.css" 
-      type="text/css" media="screen, projection">
-	<![endif]-->
-<style>
-body{ margin-top:20px; margin-bottom:20px; background-color:#DFDFDF;}
-</style>
+<tiles:insertAttribute name="head" />
 </head>
-<body>
-	<div class="container" style="border: #C1C1C1 solid 1px; border-radius:10px;">
-		<!-- Header -->
-		<tiles:insertAttribute name="header" />
-		<!-- Menu Page -->
-		<div class="span-5  border" style="height:400px;background-color:#FCFCFC;">
-			<tiles:insertAttribute name="menu" />
+<body class="homepage">
+
+	<!-- Header -->
+	<div id="header-wrapper">
+		<header id="header" class="container"> </header>
+		<tiles:insertAttribute name="logo" />
+		<tiles:insertAttribute name="main_menu" />
+
+		<!-- Banner -->
+		<div id="ba	nner-wrapper">
+			<div id="banner" class="box container">
+				<div class="row">
+					<div class="7u">
+						<h2>Hi. You are now in BrowseWhat ?.</h2>
+						<p>It's a free service and you can find what you need</p>
+					</div>
+					<div class="5u">
+						<ul>
+							<li><a href="#"
+								class="button big icon fa-arrow-circle-right">Ok let's go</a></li>
+							<li><a href="#"
+								class="button alt big icon fa-question-circle">More info</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- Body Page -->
-		<div class="span-19 last">
-			<tiles:insertAttribute name="body" />
-		</div>
-		<!-- Footer Page -->
-		<tiles:insertAttribute name="footer" />
+		<!-- Content Section -->
 	</div>
+	<tiles:insertAttribute name="content" />
+	<tiles:insertAttribute name="footer" />
 </body>
 </html>
