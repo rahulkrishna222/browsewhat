@@ -24,6 +24,6 @@
 			</ul></li>
 		<li><a href="left-sidebar.html">Services</a></li>
 		<li><a href="right-sidebar.html">About Us</a></li>
-		<li><a href="no-sidebar.html">Contact US</a></li>
+		<li><a href="contactus.html">Contact US</a></li>
 	</ul>
 </nav>

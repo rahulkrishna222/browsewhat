@@ -23,7 +23,7 @@
 
 				<!-- Box -->
 				<section class="box feature">
-					<a href="#" class="image featured"><img src="resources/images/pic02.jpg"
+					<a href="#" class="image featured"><img src="resources/images/pic01.jpg"
 						alt="" /></a>
 					<div class="inner">
 						<header>
@@ -40,7 +40,7 @@
 
 				<!-- Box -->
 				<section class="box feature last">
-					<a href="#" class="image featured"><img src="resources/images/pic03.jpg"
+					<a href="#" class="image featured"><img src="resources/images/pic01.jpg"
 						alt="" /></a>
 					<div class="inner">
 						<header>
