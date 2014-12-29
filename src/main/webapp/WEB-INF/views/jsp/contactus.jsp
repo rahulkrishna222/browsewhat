@@ -1,3 +1,4 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!-- Features -->
 <div id="features-wrapper">
 	<div class="container">
@@ -34,12 +35,13 @@
 							<h2>Have Questions? Please free to ask :)</h2>
 							<p>We'll get back to you as soon as possible</p>
 						</header>
-						<form action="contact_us.do">
-							<label for="txtReplyBackEmail"> Email </label> <input type="text"
-								name="txtReplyBackEmail" /> <label for="txtQuestion">
-								Enter your questions </label>
-							<textarea rows="10" cols="30" name="txtQuestion"></textarea>
-						</form>
+						<form:form method="POST" commandName="contactUsForm" action="GetAnswer.html">
+							<form:label path="email"> Email </form:label>
+							<form:errors path="email"></form:errors>
+							<form:input path="email" />
+							<form:label path="questions">Enter your questions </form:label>
+							<form:textarea rows="10" cols="30" path="questions"></form:textarea>
+						</form:form>
 					</div>
 
 				</section>

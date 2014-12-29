@@ -53,9 +53,9 @@ public class HomeController {
 		return "home";
 	}
 
-	@RequestMapping(value = "contactus.html", method = RequestMethod.GET)
+/*	@RequestMapping(value = "contactus.html", method = RequestMethod.GET)
 	public String contact(Locale locale, Model model) {
 		return "contact";
-	}
+	}*/
 
 }
