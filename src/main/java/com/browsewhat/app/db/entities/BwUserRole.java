@@ -1,6 +1,6 @@
 package com.browsewhat.app.db.entities;
 
-// Generated Dec 29, 2014 4:56:20 PM by Hibernate Tools 4.3.1
+// Generated Dec 31, 2014 1:31:02 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -22,59 +22,59 @@ import javax.persistence.TemporalType;
 @Table(name = "bw_user_role", catalog = "browsewhat")
 public class BwUserRole implements java.io.Serializable {
 
-	private Integer id;
-	private BwRoles bwRoles;
-	private BwUser bwUser;
-	private Date expires;
+    private Integer id;
+    private BwRoles bwRoles;
+    private BwUser  bwUser;
+    private Date    expires;
 
-	public BwUserRole() {
-	}
+    public BwUserRole() {
+    }
 
-	public BwUserRole(BwRoles bwRoles, BwUser bwUser, Date expires) {
-		this.bwRoles = bwRoles;
-		this.bwUser = bwUser;
-		this.expires = expires;
-	}
+    public BwUserRole(BwRoles bwRoles, BwUser bwUser, Date expires) {
+        this.bwRoles = bwRoles;
+        this.bwUser = bwUser;
+        this.expires = expires;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "role_id", nullable = false)
-	public BwRoles getBwRoles() {
-		return this.bwRoles;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id", nullable = false)
+    public BwRoles getBwRoles() {
+        return this.bwRoles;
+    }
 
-	public void setBwRoles(BwRoles bwRoles) {
-		this.bwRoles = bwRoles;
-	}
+    public void setBwRoles(BwRoles bwRoles) {
+        this.bwRoles = bwRoles;
+    }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "user_id", nullable = false)
-	public BwUser getBwUser() {
-		return this.bwUser;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    public BwUser getBwUser() {
+        return this.bwUser;
+    }
 
-	public void setBwUser(BwUser bwUser) {
-		this.bwUser = bwUser;
-	}
+    public void setBwUser(BwUser bwUser) {
+        this.bwUser = bwUser;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "expires", nullable = false, length = 0)
-	public Date getExpires() {
-		return this.expires;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "expires", nullable = false, length = 19)
+    public Date getExpires() {
+        return this.expires;
+    }
 
-	public void setExpires(Date expires) {
-		this.expires = expires;
-	}
+    public void setExpires(Date expires) {
+        this.expires = expires;
+    }
 
 }

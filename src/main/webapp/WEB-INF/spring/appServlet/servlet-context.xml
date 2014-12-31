@@ -11,14 +11,19 @@
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
+	<!-- Enable Annotation based configuration -->
+	<context:annotation-config />
+
+	<context:property-placeholder
+		location="classpath:hibernate/hibernate.properties" />
 
 	<context:component-scan base-package="com.browsewhat.app" />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-	
-	
+
+
 	<beans:bean
 		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
 		<beans:property name="viewClass"
@@ -28,8 +33,10 @@
 
 	<beans:bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-		<beans:property name="definitions" value="/WEB-INF/tiles/layouts.xml, /WEB-INF/tiles/views.xml" />
+		<beans:property name="definitions"
+			value="/WEB-INF/tiles/layouts.xml, /WEB-INF/tiles/views.xml" />
 	</beans:bean>
-
+	<beans:bean name="contactUsDAO" class="com.browsewhat.app.db.dao.ContactUsDAOImpl"></beans:bean>
+	<beans:bean name="contactUsService" class="com.browsewhat.app.db.service.impl.ContactUsServiceImpl"></beans:bean>
 
 </beans:beans>

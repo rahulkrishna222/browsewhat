@@ -1,6 +1,6 @@
 package com.browsewhat.app.db.entities;
 
-// Generated Dec 29, 2014 4:56:20 PM by Hibernate Tools 4.3.1
+// Generated Dec 31, 2014 1:31:02 PM by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,111 +20,109 @@ import javax.persistence.Table;
 @Table(name = "bw_roles", catalog = "browsewhat")
 public class BwRoles implements java.io.Serializable {
 
-	private Integer id;
-	private char regularUser;
-	private char organization;
-	private char employee;
-	private char admin;
-	private char superAdmin;
-	private char test;
-	private Set<BwUserRole> bwUserRoles = new HashSet<BwUserRole>(0);
+    private Integer         id;
+    private char            regularUser;
+    private char            organization;
+    private char            employee;
+    private char            admin;
+    private char            superAdmin;
+    private char            test;
+    private Set<BwUserRole> bwUserRoles = new HashSet<BwUserRole>(0);
 
-	public BwRoles() {
-	}
+    public BwRoles() {
+    }
 
-	public BwRoles(char regularUser, char organization, char employee,
-			char admin, char superAdmin, char test) {
-		this.regularUser = regularUser;
-		this.organization = organization;
-		this.employee = employee;
-		this.admin = admin;
-		this.superAdmin = superAdmin;
-		this.test = test;
-	}
+    public BwRoles(char regularUser, char organization, char employee, char admin, char superAdmin, char test) {
+        this.regularUser = regularUser;
+        this.organization = organization;
+        this.employee = employee;
+        this.admin = admin;
+        this.superAdmin = superAdmin;
+        this.test = test;
+    }
 
-	public BwRoles(char regularUser, char organization, char employee,
-			char admin, char superAdmin, char test, Set<BwUserRole> bwUserRoles) {
-		this.regularUser = regularUser;
-		this.organization = organization;
-		this.employee = employee;
-		this.admin = admin;
-		this.superAdmin = superAdmin;
-		this.test = test;
-		this.bwUserRoles = bwUserRoles;
-	}
+    public BwRoles(char regularUser, char organization, char employee, char admin, char superAdmin, char test, Set<BwUserRole> bwUserRoles) {
+        this.regularUser = regularUser;
+        this.organization = organization;
+        this.employee = employee;
+        this.admin = admin;
+        this.superAdmin = superAdmin;
+        this.test = test;
+        this.bwUserRoles = bwUserRoles;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@Column(name = "regular_user", nullable = false, length = 1)
-	public char getRegularUser() {
-		return this.regularUser;
-	}
+    @Column(name = "regular_user", nullable = false, length = 1)
+    public char getRegularUser() {
+        return this.regularUser;
+    }
 
-	public void setRegularUser(char regularUser) {
-		this.regularUser = regularUser;
-	}
+    public void setRegularUser(char regularUser) {
+        this.regularUser = regularUser;
+    }
 
-	@Column(name = "organization", nullable = false, length = 1)
-	public char getOrganization() {
-		return this.organization;
-	}
+    @Column(name = "organization", nullable = false, length = 1)
+    public char getOrganization() {
+        return this.organization;
+    }
 
-	public void setOrganization(char organization) {
-		this.organization = organization;
-	}
+    public void setOrganization(char organization) {
+        this.organization = organization;
+    }
 
-	@Column(name = "employee", nullable = false, length = 1)
-	public char getEmployee() {
-		return this.employee;
-	}
+    @Column(name = "employee", nullable = false, length = 1)
+    public char getEmployee() {
+        return this.employee;
+    }
 
-	public void setEmployee(char employee) {
-		this.employee = employee;
-	}
+    public void setEmployee(char employee) {
+        this.employee = employee;
+    }
 
-	@Column(name = "admin", nullable = false, length = 1)
-	public char getAdmin() {
-		return this.admin;
-	}
+    @Column(name = "admin", nullable = false, length = 1)
+    public char getAdmin() {
+        return this.admin;
+    }
 
-	public void setAdmin(char admin) {
-		this.admin = admin;
-	}
+    public void setAdmin(char admin) {
+        this.admin = admin;
+    }
 
-	@Column(name = "super_admin", nullable = false, length = 1)
-	public char getSuperAdmin() {
-		return this.superAdmin;
-	}
+    @Column(name = "super_admin", nullable = false, length = 1)
+    public char getSuperAdmin() {
+        return this.superAdmin;
+    }
 
-	public void setSuperAdmin(char superAdmin) {
-		this.superAdmin = superAdmin;
-	}
+    public void setSuperAdmin(char superAdmin) {
+        this.superAdmin = superAdmin;
+    }
 
-	@Column(name = "test", nullable = false, length = 1)
-	public char getTest() {
-		return this.test;
-	}
+    @Column(name = "test", nullable = false, length = 1)
+    public char getTest() {
+        return this.test;
+    }
 
-	public void setTest(char test) {
-		this.test = test;
-	}
+    public void setTest(char test) {
+        this.test = test;
+    }
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "bwRoles")
-	public Set<BwUserRole> getBwUserRoles() {
-		return this.bwUserRoles;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "bwRoles")
+    public Set<BwUserRole> getBwUserRoles() {
+        return this.bwUserRoles;
+    }
 
-	public void setBwUserRoles(Set<BwUserRole> bwUserRoles) {
-		this.bwUserRoles = bwUserRoles;
-	}
+    public void setBwUserRoles(Set<BwUserRole> bwUserRoles) {
+        this.bwUserRoles = bwUserRoles;
+    }
 
 }

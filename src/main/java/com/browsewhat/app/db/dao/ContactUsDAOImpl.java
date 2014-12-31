@@ -3,7 +3,11 @@
  */
 package com.browsewhat.app.db.dao;
 
-import com.browsewhat.app.models.form.ContactUs;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.browsewhat.app.db.entities.BwContactus;
 
 /**
  * @author krahul
@@ -11,13 +15,16 @@ import com.browsewhat.app.models.form.ContactUs;
  */
 public class ContactUsDAOImpl implements ContactUsDAO {
 
+	@Autowired
+	private SessionFactory sessionFactory;
+
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see com.browsewhat.app.db.dao.template.DAOTemplate#findAll()
 	 */
 	@Override
-	public ContactUs findAll() {
+	public BwContactus findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -29,9 +36,12 @@ public class ContactUsDAOImpl implements ContactUsDAO {
 	 * com.browsewhat.app.db.dao.template.DAOTemplate#insert(java.lang.Object)
 	 */
 	@Override
-	public ContactUs insert(ContactUs t) {
-		// TODO Auto-generated method stub
-		return null;
+	public BwContactus insert(BwContactus t) {
+		Session session = sessionFactory.openSession();
+
+		session.save(t);
+
+		return t;
 	}
 
 	/*
@@ -41,7 +51,7 @@ public class ContactUsDAOImpl implements ContactUsDAO {
 	 * com.browsewhat.app.db.dao.template.DAOTemplate#delete(java.lang.Object)
 	 */
 	@Override
-	public void delete(ContactUs id) {
+	public void delete(BwContactus id) {
 		// TODO Auto-generated method stub
 
 	}
@@ -53,7 +63,7 @@ public class ContactUsDAOImpl implements ContactUsDAO {
 	 * com.browsewhat.app.db.dao.template.DAOTemplate#find(java.lang.Object)
 	 */
 	@Override
-	public ContactUs find(Object id) {
+	public BwContactus find(Object id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -65,7 +75,7 @@ public class ContactUsDAOImpl implements ContactUsDAO {
 	 * com.browsewhat.app.db.dao.template.DAOTemplate#update(java.lang.Object)
 	 */
 	@Override
-	public ContactUs update(ContactUs t) {
+	public BwContactus update(BwContactus t) {
 		// TODO Auto-generated method stub
 		return null;
 	}

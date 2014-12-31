@@ -13,6 +13,7 @@ import org.hibernate.validator.constraints.Email;
  */
 public class ContactUs {
 
+	private Integer id;
 	@NotNull(message = "Email field cannot be null")
 	@Email(message = "Please enter a valid email address")
 	private String email;
@@ -24,14 +25,24 @@ public class ContactUs {
 	}
 
 	/**
+	 * @param id
 	 * @param email
 	 * @param subject
 	 * @param questions
 	 */
-	public ContactUs(String email, String subject, String questions) {
+	public ContactUs(Integer id, String email, String subject, String questions) {
+		this.id = id;
 		this.email = email;
 		this.subject = subject;
 		this.questions = questions;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getEmail() {

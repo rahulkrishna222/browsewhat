@@ -3,8 +3,11 @@
  */
 package com.browsewhat.app.db.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.browsewhat.app.db.dao.ContactUsDAO;
+import com.browsewhat.app.db.entities.BwContactus;
 import com.browsewhat.app.db.service.ContactUsService;
-import com.browsewhat.app.models.form.ContactUs;
 
 /**
  * @author krahul
@@ -12,13 +15,16 @@ import com.browsewhat.app.models.form.ContactUs;
  */
 public class ContactUsServiceImpl implements ContactUsService {
 
+	@Autowired
+	private ContactUsDAO contactUsDAO;
+
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see com.browsewhat.app.db.service.template.DBServiceTemplate#findAll()
 	 */
 	@Override
-	public ContactUs findAll() {
+	public BwContactus findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -31,9 +37,9 @@ public class ContactUsServiceImpl implements ContactUsService {
 	 * .Object)
 	 */
 	@Override
-	public ContactUs insert(ContactUs t) {
+	public BwContactus insert(BwContactus t) {
 		// TODO Auto-generated method stub
-		return null;
+		return contactUsDAO.insert(t);
 	}
 
 	/*
@@ -44,7 +50,7 @@ public class ContactUsServiceImpl implements ContactUsService {
 	 * lang.Object)
 	 */
 	@Override
-	public void delete(ContactUs id) {
+	public void delete(BwContactus id) {
 		// TODO Auto-generated method stub
 
 	}
@@ -57,7 +63,7 @@ public class ContactUsServiceImpl implements ContactUsService {
 	 * .Object)
 	 */
 	@Override
-	public ContactUs find(Object id) {
+	public BwContactus find(Object id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -70,7 +76,7 @@ public class ContactUsServiceImpl implements ContactUsService {
 	 * lang.Object)
 	 */
 	@Override
-	public ContactUs update(ContactUs t) {
+	public BwContactus update(BwContactus t) {
 		// TODO Auto-generated method stub
 		return null;
 	}

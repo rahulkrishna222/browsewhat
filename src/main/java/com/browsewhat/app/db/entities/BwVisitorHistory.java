@@ -1,6 +1,6 @@
 package com.browsewhat.app.db.entities;
 
-// Generated Dec 29, 2014 4:56:20 PM by Hibernate Tools 4.3.1
+// Generated Dec 31, 2014 1:31:02 PM by Hibernate Tools 4.3.1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,34 +16,34 @@ import javax.persistence.Table;
 @Table(name = "bw_visitor_history", catalog = "browsewhat")
 public class BwVisitorHistory implements java.io.Serializable {
 
-	private Long id;
-	private String remoteIp;
+    private Long   id;
+    private String remoteIp;
 
-	public BwVisitorHistory() {
-	}
+    public BwVisitorHistory() {
+    }
 
-	public BwVisitorHistory(String remoteIp) {
-		this.remoteIp = remoteIp;
-	}
+    public BwVisitorHistory(String remoteIp) {
+        this.remoteIp = remoteIp;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
-	public Long getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    public Long getId() {
+        return this.id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	@Column(name = "remote_ip", nullable = false, length = 17)
-	public String getRemoteIp() {
-		return this.remoteIp;
-	}
+    @Column(name = "remote_ip", nullable = false, length = 17)
+    public String getRemoteIp() {
+        return this.remoteIp;
+    }
 
-	public void setRemoteIp(String remoteIp) {
-		this.remoteIp = remoteIp;
-	}
+    public void setRemoteIp(String remoteIp) {
+        this.remoteIp = remoteIp;
+    }
 
 }

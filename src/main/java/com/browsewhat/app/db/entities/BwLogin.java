@@ -1,6 +1,6 @@
 package com.browsewhat.app.db.entities;
 
-// Generated Dec 29, 2014 4:56:20 PM by Hibernate Tools 4.3.1
+// Generated Dec 31, 2014 1:31:02 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -26,77 +26,75 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "bw_login", catalog = "browsewhat", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
 public class BwLogin implements java.io.Serializable {
 
-	private Integer id;
-	private BwUser bwUser;
-	private String password;
-	private Date expires;
-	private Set<BwLoginHistory> bwLoginHistories = new HashSet<BwLoginHistory>(
-			0);
+    private Integer             id;
+    private BwUser              bwUser;
+    private String              password;
+    private Date                expires;
+    private Set<BwLoginHistory> bwLoginHistories = new HashSet<BwLoginHistory>(0);
 
-	public BwLogin() {
-	}
+    public BwLogin() {
+    }
 
-	public BwLogin(BwUser bwUser, String password, Date expires) {
-		this.bwUser = bwUser;
-		this.password = password;
-		this.expires = expires;
-	}
+    public BwLogin(BwUser bwUser, String password, Date expires) {
+        this.bwUser = bwUser;
+        this.password = password;
+        this.expires = expires;
+    }
 
-	public BwLogin(BwUser bwUser, String password, Date expires,
-			Set<BwLoginHistory> bwLoginHistories) {
-		this.bwUser = bwUser;
-		this.password = password;
-		this.expires = expires;
-		this.bwLoginHistories = bwLoginHistories;
-	}
+    public BwLogin(BwUser bwUser, String password, Date expires, Set<BwLoginHistory> bwLoginHistories) {
+        this.bwUser = bwUser;
+        this.password = password;
+        this.expires = expires;
+        this.bwLoginHistories = bwLoginHistories;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "username", unique = true, nullable = false)
-	public BwUser getBwUser() {
-		return this.bwUser;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "username", unique = true, nullable = false)
+    public BwUser getBwUser() {
+        return this.bwUser;
+    }
 
-	public void setBwUser(BwUser bwUser) {
-		this.bwUser = bwUser;
-	}
+    public void setBwUser(BwUser bwUser) {
+        this.bwUser = bwUser;
+    }
 
-	@Column(name = "password", nullable = false, length = 250)
-	public String getPassword() {
-		return this.password;
-	}
+    @Column(name = "password", nullable = false, length = 250)
+    public String getPassword() {
+        return this.password;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "expires", nullable = false, length = 0)
-	public Date getExpires() {
-		return this.expires;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "expires", nullable = false, length = 19)
+    public Date getExpires() {
+        return this.expires;
+    }
 
-	public void setExpires(Date expires) {
-		this.expires = expires;
-	}
+    public void setExpires(Date expires) {
+        this.expires = expires;
+    }
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "bwLogin")
-	public Set<BwLoginHistory> getBwLoginHistories() {
-		return this.bwLoginHistories;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "bwLogin")
+    public Set<BwLoginHistory> getBwLoginHistories() {
+        return this.bwLoginHistories;
+    }
 
-	public void setBwLoginHistories(Set<BwLoginHistory> bwLoginHistories) {
-		this.bwLoginHistories = bwLoginHistories;
-	}
+    public void setBwLoginHistories(Set<BwLoginHistory> bwLoginHistories) {
+        this.bwLoginHistories = bwLoginHistories;
+    }
 
 }

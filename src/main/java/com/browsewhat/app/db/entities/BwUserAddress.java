@@ -1,6 +1,6 @@
 package com.browsewhat.app.db.entities;
 
-// Generated Dec 29, 2014 4:56:20 PM by Hibernate Tools 4.3.1
+// Generated Dec 31, 2014 1:31:02 PM by Hibernate Tools 4.3.1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,132 +19,131 @@ import javax.persistence.Table;
 @Table(name = "bw_user_address", catalog = "browsewhat")
 public class BwUserAddress implements java.io.Serializable {
 
-	private Integer id;
-	private BwCountries bwCountries;
-	private BwUser bwUser;
-	private String address1;
-	private String address2;
-	private String city;
-	private String state;
-	private char isPrimary;
-	private String lat;
-	private String longi;
+    private Integer     id;
+    private BwCountries bwCountries;
+    private BwUser      bwUser;
+    private String      address1;
+    private String      address2;
+    private String      city;
+    private String      state;
+    private char        isPrimary;
+    private String      lat;
+    private String      longi;
 
-	public BwUserAddress() {
-	}
+    public BwUserAddress() {
+    }
 
-	public BwUserAddress(BwCountries bwCountries, BwUser bwUser, char isPrimary) {
-		this.bwCountries = bwCountries;
-		this.bwUser = bwUser;
-		this.isPrimary = isPrimary;
-	}
+    public BwUserAddress(BwCountries bwCountries, BwUser bwUser, char isPrimary) {
+        this.bwCountries = bwCountries;
+        this.bwUser = bwUser;
+        this.isPrimary = isPrimary;
+    }
 
-	public BwUserAddress(BwCountries bwCountries, BwUser bwUser,
-			String address1, String address2, String city, String state,
-			char isPrimary, String lat, String longi) {
-		this.bwCountries = bwCountries;
-		this.bwUser = bwUser;
-		this.address1 = address1;
-		this.address2 = address2;
-		this.city = city;
-		this.state = state;
-		this.isPrimary = isPrimary;
-		this.lat = lat;
-		this.longi = longi;
-	}
+    public BwUserAddress(BwCountries bwCountries, BwUser bwUser, String address1, String address2, String city, String state, char isPrimary,
+            String lat, String longi) {
+        this.bwCountries = bwCountries;
+        this.bwUser = bwUser;
+        this.address1 = address1;
+        this.address2 = address2;
+        this.city = city;
+        this.state = state;
+        this.isPrimary = isPrimary;
+        this.lat = lat;
+        this.longi = longi;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "country", nullable = false)
-	public BwCountries getBwCountries() {
-		return this.bwCountries;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "country", nullable = false)
+    public BwCountries getBwCountries() {
+        return this.bwCountries;
+    }
 
-	public void setBwCountries(BwCountries bwCountries) {
-		this.bwCountries = bwCountries;
-	}
+    public void setBwCountries(BwCountries bwCountries) {
+        this.bwCountries = bwCountries;
+    }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "user_id", nullable = false)
-	public BwUser getBwUser() {
-		return this.bwUser;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    public BwUser getBwUser() {
+        return this.bwUser;
+    }
 
-	public void setBwUser(BwUser bwUser) {
-		this.bwUser = bwUser;
-	}
+    public void setBwUser(BwUser bwUser) {
+        this.bwUser = bwUser;
+    }
 
-	@Column(name = "address_1", length = 100)
-	public String getAddress1() {
-		return this.address1;
-	}
+    @Column(name = "address_1", length = 100)
+    public String getAddress1() {
+        return this.address1;
+    }
 
-	public void setAddress1(String address1) {
-		this.address1 = address1;
-	}
+    public void setAddress1(String address1) {
+        this.address1 = address1;
+    }
 
-	@Column(name = "address_2", length = 150)
-	public String getAddress2() {
-		return this.address2;
-	}
+    @Column(name = "address_2", length = 150)
+    public String getAddress2() {
+        return this.address2;
+    }
 
-	public void setAddress2(String address2) {
-		this.address2 = address2;
-	}
+    public void setAddress2(String address2) {
+        this.address2 = address2;
+    }
 
-	@Column(name = "city", length = 45)
-	public String getCity() {
-		return this.city;
-	}
+    @Column(name = "city", length = 45)
+    public String getCity() {
+        return this.city;
+    }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-	@Column(name = "state", length = 45)
-	public String getState() {
-		return this.state;
-	}
+    @Column(name = "state", length = 45)
+    public String getState() {
+        return this.state;
+    }
 
-	public void setState(String state) {
-		this.state = state;
-	}
+    public void setState(String state) {
+        this.state = state;
+    }
 
-	@Column(name = "is_primary", nullable = false, length = 1)
-	public char getIsPrimary() {
-		return this.isPrimary;
-	}
+    @Column(name = "is_primary", nullable = false, length = 1)
+    public char getIsPrimary() {
+        return this.isPrimary;
+    }
 
-	public void setIsPrimary(char isPrimary) {
-		this.isPrimary = isPrimary;
-	}
+    public void setIsPrimary(char isPrimary) {
+        this.isPrimary = isPrimary;
+    }
 
-	@Column(name = "lat", length = 45)
-	public String getLat() {
-		return this.lat;
-	}
+    @Column(name = "lat", length = 45)
+    public String getLat() {
+        return this.lat;
+    }
 
-	public void setLat(String lat) {
-		this.lat = lat;
-	}
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
 
-	@Column(name = "longi", length = 45)
-	public String getLongi() {
-		return this.longi;
-	}
+    @Column(name = "longi", length = 45)
+    public String getLongi() {
+        return this.longi;
+    }
 
-	public void setLongi(String longi) {
-		this.longi = longi;
-	}
+    public void setLongi(String longi) {
+        this.longi = longi;
+    }
 
 }

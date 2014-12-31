@@ -1,6 +1,6 @@
 package com.browsewhat.app.db.entities;
 
-// Generated Dec 29, 2014 4:56:20 PM by Hibernate Tools 4.3.1
+// Generated Dec 31, 2014 1:31:02 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -22,58 +22,58 @@ import javax.persistence.TemporalType;
 @Table(name = "bw_modules", catalog = "browsewhat")
 public class BwModules implements java.io.Serializable {
 
-	private Integer id;
-	private BwCategory bwCategory;
-	private String moduleName;
-	private Date started;
+    private Integer    id;
+    private BwCategory bwCategory;
+    private String     moduleName;
+    private Date       started;
 
-	public BwModules() {
-	}
+    public BwModules() {
+    }
 
-	public BwModules(BwCategory bwCategory, String moduleName, Date started) {
-		this.bwCategory = bwCategory;
-		this.moduleName = moduleName;
-		this.started = started;
-	}
+    public BwModules(BwCategory bwCategory, String moduleName, Date started) {
+        this.bwCategory = bwCategory;
+        this.moduleName = moduleName;
+        this.started = started;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category", nullable = false)
-	public BwCategory getBwCategory() {
-		return this.bwCategory;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category", nullable = false)
+    public BwCategory getBwCategory() {
+        return this.bwCategory;
+    }
 
-	public void setBwCategory(BwCategory bwCategory) {
-		this.bwCategory = bwCategory;
-	}
+    public void setBwCategory(BwCategory bwCategory) {
+        this.bwCategory = bwCategory;
+    }
 
-	@Column(name = "module_name", nullable = false, length = 100)
-	public String getModuleName() {
-		return this.moduleName;
-	}
+    @Column(name = "module_name", nullable = false, length = 100)
+    public String getModuleName() {
+        return this.moduleName;
+    }
 
-	public void setModuleName(String moduleName) {
-		this.moduleName = moduleName;
-	}
+    public void setModuleName(String moduleName) {
+        this.moduleName = moduleName;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "started", nullable = false, length = 0)
-	public Date getStarted() {
-		return this.started;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "started", nullable = false, length = 19)
+    public Date getStarted() {
+        return this.started;
+    }
 
-	public void setStarted(Date started) {
-		this.started = started;
-	}
+    public void setStarted(Date started) {
+        this.started = started;
+    }
 
 }

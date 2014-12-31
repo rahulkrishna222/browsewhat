@@ -13,6 +13,7 @@
 		<org.hibernate.version>4.3.7.Final</org.hibernate.version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<org.mysql.version>5.1.34</org.mysql.version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -82,6 +83,13 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>
+		<!-- MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${org.mysql.version}</version>
+		</dependency>
+
 		<!-- DB Pooling -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>

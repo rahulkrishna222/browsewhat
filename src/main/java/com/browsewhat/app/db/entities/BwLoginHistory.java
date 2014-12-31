@@ -1,6 +1,6 @@
 package com.browsewhat.app.db.entities;
 
-// Generated Dec 29, 2014 4:56:20 PM by Hibernate Tools 4.3.1
+// Generated Dec 31, 2014 1:31:02 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -22,70 +22,69 @@ import javax.persistence.TemporalType;
 @Table(name = "bw_login_history", catalog = "browsewhat")
 public class BwLoginHistory implements java.io.Serializable {
 
-	private Integer id;
-	private BwLogin bwLogin;
-	private Date accessedTime;
-	private String host;
-	private String remoteIp;
+    private Integer id;
+    private BwLogin bwLogin;
+    private Date    accessedTime;
+    private String  host;
+    private String  remoteIp;
 
-	public BwLoginHistory() {
-	}
+    public BwLoginHistory() {
+    }
 
-	public BwLoginHistory(BwLogin bwLogin, Date accessedTime, String host,
-			String remoteIp) {
-		this.bwLogin = bwLogin;
-		this.accessedTime = accessedTime;
-		this.host = host;
-		this.remoteIp = remoteIp;
-	}
+    public BwLoginHistory(BwLogin bwLogin, Date accessedTime, String host, String remoteIp) {
+        this.bwLogin = bwLogin;
+        this.accessedTime = accessedTime;
+        this.host = host;
+        this.remoteIp = remoteIp;
+    }
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "id", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
-	}
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    public Integer getId() {
+        return this.id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "login_id", nullable = false)
-	public BwLogin getBwLogin() {
-		return this.bwLogin;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "login_id", nullable = false)
+    public BwLogin getBwLogin() {
+        return this.bwLogin;
+    }
 
-	public void setBwLogin(BwLogin bwLogin) {
-		this.bwLogin = bwLogin;
-	}
+    public void setBwLogin(BwLogin bwLogin) {
+        this.bwLogin = bwLogin;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "accessed_time", nullable = false, length = 0)
-	public Date getAccessedTime() {
-		return this.accessedTime;
-	}
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "accessed_time", nullable = false, length = 19)
+    public Date getAccessedTime() {
+        return this.accessedTime;
+    }
 
-	public void setAccessedTime(Date accessedTime) {
-		this.accessedTime = accessedTime;
-	}
+    public void setAccessedTime(Date accessedTime) {
+        this.accessedTime = accessedTime;
+    }
 
-	@Column(name = "host", nullable = false, length = 150)
-	public String getHost() {
-		return this.host;
-	}
+    @Column(name = "host", nullable = false, length = 150)
+    public String getHost() {
+        return this.host;
+    }
 
-	public void setHost(String host) {
-		this.host = host;
-	}
+    public void setHost(String host) {
+        this.host = host;
+    }
 
-	@Column(name = "remote_ip", nullable = false, length = 17)
-	public String getRemoteIp() {
-		return this.remoteIp;
-	}
+    @Column(name = "remote_ip", nullable = false, length = 17)
+    public String getRemoteIp() {
+        return this.remoteIp;
+    }
 
-	public void setRemoteIp(String remoteIp) {
-		this.remoteIp = remoteIp;
-	}
+    public void setRemoteIp(String remoteIp) {
+        this.remoteIp = remoteIp;
+    }
 
 }
