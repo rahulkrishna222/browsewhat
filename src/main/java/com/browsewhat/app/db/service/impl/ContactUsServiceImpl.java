@@ -3,6 +3,8 @@
  */
 package com.browsewhat.app.db.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.browsewhat.app.db.dao.ContactUsDAO;
@@ -24,7 +26,7 @@ public class ContactUsServiceImpl implements ContactUsService {
 	 * @see com.browsewhat.app.db.service.template.DBServiceTemplate#findAll()
 	 */
 	@Override
-	public BwContactus findAll() {
+	public List<BwContactus> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
