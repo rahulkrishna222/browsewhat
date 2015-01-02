@@ -5,12 +5,20 @@
 <tiles-definitions>
 
 	<definition name="contact" extends="base.definition">
-		<put-attribute name="features" value="/WEB-INF/views/jsp/contactus.jsp"></put-attribute>	
+		<put-attribute name="features" value="/WEB-INF/views/jsp/contactus.jsp"></put-attribute>
 		<put-attribute name="banner" value="" />
 		<!-- <put-attribute name="content" value="" /> -->
 	</definition>
 	<definition name="thankyou" extends="base.definition">
-		<put-attribute name="features" value="/WEB-INF/views/jsp/contact_us_success.jsp"></put-attribute>	
+		<put-attribute name="features"
+			value="/WEB-INF/views/jsp/contact_us_success.jsp"></put-attribute>
+		<put-attribute name="banner" value="" />
+		<!-- <put-attribute name="content" value="" /> -->
+	</definition>
+
+	<definition name="services" extends="base.definition">
+		<put-attribute name="features"
+			value="/WEB-INF/views/jsp/services.jsp"></put-attribute>
 		<put-attribute name="banner" value="" />
 		<!-- <put-attribute name="content" value="" /> -->
 	</definition>

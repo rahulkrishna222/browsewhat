@@ -22,7 +22,7 @@
 					</ul></li>
 				<li><a href="#">Technology & News</a></li>
 			</ul></li>
-		<li><a href="left-sidebar.html">Services</a></li>
+		<li><a href="services.html">Services</a></li>
 		<li><a href="right-sidebar.html">About Us</a></li>
 		<li><a href="contactus.html">Contact US</a></li>
 	</ul>

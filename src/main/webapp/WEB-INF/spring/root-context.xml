@@ -20,6 +20,8 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.browsewhat.app.db.entities.BwContactus</value>
+				<value>com.browsewhat.app.db.entities.BwModules</value>
+				<value>com.browsewhat.app.db.entities.BwCategory</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

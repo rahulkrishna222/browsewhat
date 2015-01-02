@@ -2,7 +2,9 @@
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:cache="http://www.springframework.org/schema/cache" xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
@@ -13,6 +15,8 @@
 	<annotation-driven />
 	<!-- Enable Annotation based configuration -->
 	<context:annotation-config />
+	<!-- Enables the Spring Cache -->
+	<cache:annotation-driven />
 
 	<context:property-placeholder
 		location="classpath:hibernate/hibernate.properties" />
@@ -23,7 +27,16 @@
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
+	<beans:bean id="cacheManager"
+		class="org.springframework.cache.ehcache.EhCacheCacheManager"
+		p:cacheManager-ref="ehcache">
 
+	</beans:bean>
+	<!-- Ehcache library setup -->
+	<beans:bean id="ehcache"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" p:shared="true"
+		p:config-location="classpath:ehcache-browsewhat.xml">
+	</beans:bean>
 	<beans:bean
 		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
 		<beans:property name="viewClass"
@@ -36,7 +49,16 @@
 		<beans:property name="definitions"
 			value="/WEB-INF/tiles/layouts.xml, /WEB-INF/tiles/views.xml" />
 	</beans:bean>
-	<beans:bean name="contactUsDAO" class="com.browsewhat.app.db.dao.ContactUsDAOImpl"></beans:bean>
-	<beans:bean name="contactUsService" class="com.browsewhat.app.db.service.impl.ContactUsServiceImpl"></beans:bean>
-
+	<beans:bean name="contactUsDAO"
+		class="com.browsewhat.app.db.dao.impl.ContactUsDAOImpl"></beans:bean>
+	<beans:bean name="contactUsService"
+		class="com.browsewhat.app.db.service.impl.ContactUsServiceImpl"></beans:bean>
+	<beans:bean name="bankDAO"
+		class="com.browsewhat.app.db.dao.impl.BankDAOImpl"></beans:bean>
+	<beans:bean name="bankService"
+		class="com.browsewhat.app.db.service.impl.BankServiceImpl"></beans:bean>
+	<beans:bean name="browseWhatServicesDAO"
+		class="com.browsewhat.app.db.dao.impl.BrowseWhatServicesDAOImpl"></beans:bean>
+	<beans:bean name="browseWhatServicesServiceImpl"
+		class="com.browsewhat.app.db.service.impl.BrowseWhatServicesServiceImpl"></beans:bean>
 </beans:beans>
