@@ -1,12 +1,14 @@
 package com.browsewhat.app.db.dao.template;
 
+import java.util.List;
+
 public interface DAOTemplate<T> {
 	/**
 	 * Returns all entries from DB
 	 * 
 	 * @return
 	 */
-	T findAll();
+	List<T> findAll();
 
 	T insert(T t);
 

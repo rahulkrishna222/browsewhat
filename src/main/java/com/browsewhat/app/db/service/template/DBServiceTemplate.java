@@ -3,6 +3,8 @@
  */
 package com.browsewhat.app.db.service.template;
 
+import java.util.List;
+
 /**
  * @author krahul
  *
@@ -13,7 +15,7 @@ public interface DBServiceTemplate<T> {
 	 * 
 	 * @return
 	 */
-	T findAll();
+	List<T> findAll();
 
 	T insert(T t);
 
