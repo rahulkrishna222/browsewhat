@@ -1,6 +1,6 @@
 package com.browsewhat.app.db.entities;
 
-// Generated Dec 31, 2014 1:31:02 PM by Hibernate Tools 4.3.1
+// Generated Jan 2, 2015 5:42:03 PM by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -26,22 +26,24 @@ public class BwCategory implements java.io.Serializable {
     private BwCategory      bwCategory;
     private String          category;
     private char            isPublic;
+    private String          url;
     private Set<BwModules>  bwModuleses  = new HashSet<BwModules>(0);
     private Set<BwCategory> bwCategories = new HashSet<BwCategory>(0);
 
     public BwCategory() {
     }
 
-    public BwCategory(BwCategory bwCategory, String category, char isPublic) {
-        this.bwCategory = bwCategory;
+    public BwCategory(String category, char isPublic, String url) {
         this.category = category;
         this.isPublic = isPublic;
+        this.url = url;
     }
 
-    public BwCategory(BwCategory bwCategory, String category, char isPublic, Set<BwModules> bwModuleses, Set<BwCategory> bwCategories) {
+    public BwCategory(BwCategory bwCategory, String category, char isPublic, String url, Set<BwModules> bwModuleses, Set<BwCategory> bwCategories) {
         this.bwCategory = bwCategory;
         this.category = category;
         this.isPublic = isPublic;
+        this.url = url;
         this.bwModuleses = bwModuleses;
         this.bwCategories = bwCategories;
     }
@@ -58,7 +60,7 @@ public class BwCategory implements java.io.Serializable {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parent_category", nullable = false)
+    @JoinColumn(name = "parent_category")
     public BwCategory getBwCategory() {
         return this.bwCategory;
     }
@@ -83,6 +85,15 @@ public class BwCategory implements java.io.Serializable {
 
     public void setIsPublic(char isPublic) {
         this.isPublic = isPublic;
+    }
+
+    @Column(name = "url", nullable = false, length = 45)
+    public String getUrl() {
+        return this.url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "bwCategory")

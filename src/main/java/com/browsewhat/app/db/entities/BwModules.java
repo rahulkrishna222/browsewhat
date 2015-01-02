@@ -1,6 +1,6 @@
 package com.browsewhat.app.db.entities;
 
-// Generated Dec 31, 2014 1:31:02 PM by Hibernate Tools 4.3.1
+// Generated Jan 2, 2015 5:42:03 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -25,15 +25,19 @@ public class BwModules implements java.io.Serializable {
     private Integer    id;
     private BwCategory bwCategory;
     private String     moduleName;
+    private String     url;
     private Date       started;
+    private String     image;
 
     public BwModules() {
     }
 
-    public BwModules(BwCategory bwCategory, String moduleName, Date started) {
+    public BwModules(BwCategory bwCategory, String moduleName, String url, Date started, String image) {
         this.bwCategory = bwCategory;
         this.moduleName = moduleName;
+        this.url = url;
         this.started = started;
+        this.image = image;
     }
 
     @Id
@@ -66,6 +70,15 @@ public class BwModules implements java.io.Serializable {
         this.moduleName = moduleName;
     }
 
+    @Column(name = "url", nullable = false, length = 45)
+    public String getUrl() {
+        return this.url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "started", nullable = false, length = 19)
     public Date getStarted() {
@@ -74,6 +87,15 @@ public class BwModules implements java.io.Serializable {
 
     public void setStarted(Date started) {
         this.started = started;
+    }
+
+    @Column(name = "image", nullable = false, length = 45)
+    public String getImage() {
+        return this.image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
 }
