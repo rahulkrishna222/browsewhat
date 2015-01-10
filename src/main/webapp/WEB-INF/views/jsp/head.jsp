@@ -1,3 +1,5 @@
+<base href="http://localhost:8080/app/">
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -7,6 +9,7 @@
 <script src="resources/js/skel.min.js"></script>
 <script src="resources/js/skel-layers.min.js"></script>
 <script src="resources/js/init.js"></script>
+<script src="resources/js/common-utils.js"></script>
 <noscript>
 	<link rel="stylesheet" href="resources/css/skel.css" />
 	<link rel="stylesheet" href="resources/css/style.css" />

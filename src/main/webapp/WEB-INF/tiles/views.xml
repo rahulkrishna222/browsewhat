@@ -17,10 +17,19 @@
 	</definition>
 
 	<definition name="services" extends="base.definition">
-		<put-attribute name="features"
-			value="/WEB-INF/views/jsp/services.jsp"></put-attribute>
+		<put-attribute name="features" value="/WEB-INF/views/jsp/services.jsp"></put-attribute>
 		<put-attribute name="banner" value="" />
 		<!-- <put-attribute name="content" value="" /> -->
+	</definition>
+
+	<definition name="bank-service" extends="base.definition">
+		<put-attribute name="features" value="/WEB-INF/views/jsp/bank.jsp" />
+		<put-attribute name="banner" value="" />
+	</definition>
+	<definition name="bank-search-result" extends="base.definition">
+		<put-attribute name="features"
+			value="/WEB-INF/views/jsp/bank_search_result.jsp" />
+		<put-attribute name="banner" value="" />
 	</definition>
 
 </tiles-definitions>

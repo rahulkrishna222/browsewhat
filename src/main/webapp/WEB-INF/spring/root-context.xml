@@ -22,6 +22,9 @@
 				<value>com.browsewhat.app.db.entities.BwContactus</value>
 				<value>com.browsewhat.app.db.entities.BwModules</value>
 				<value>com.browsewhat.app.db.entities.BwCategory</value>
+				<value>com.browsewhat.app.db.entities.BwBankInfo</value>
+				<value>com.browsewhat.app.db.entities.BwBankBranch</value>
+				<value>com.browsewhat.app.db.entities.BwBankBranchLocationMap</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

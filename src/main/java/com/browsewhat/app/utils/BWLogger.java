@@ -53,6 +53,10 @@ public final class BWLogger {
         System.out.println(message);
     }
 
+    public static void error(String message, Throwable e) {
+        System.out.println(message);
+    }
+    
     public static void error(String message, Throwable e, String... args) {
         System.out.println(message);
     }

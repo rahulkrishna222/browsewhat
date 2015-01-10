@@ -32,15 +32,16 @@
 				<section class="box feature">
 					<div class="inner">
 						<header>
-							<h2>Have Questions? Please free to ask :)</h2>
+							<h2>How can I help you ? </h2>
 							<p>We'll get back to you as soon as possible</p>
 						</header>
 						<form:form method="POST" commandName="contactUsForm" action="GetAnswer.html">
 							<form:label path="email"> Email </form:label>
 							<form:errors path="email"></form:errors>
 							<form:input path="email" />
-							<form:label path="questions">Enter your questions </form:label>
+							<form:label path="questions">Ask your questions </form:label>
 							<form:textarea rows="10" cols="30" path="questions"></form:textarea>
+							<input type="button" value="Give me answer" />
 						</form:form>
 					</div>
 

@@ -97,4 +97,22 @@ public class BankServiceImpl implements BankService {
     public BankDAO getBankDAO() {
         return bankDAO;
     }
+
+    @Override
+    public void insertBankInfo(BwBankInfo bank) {
+        bankDAO.insertBankInfo(bank);
+
+    }
+
+    @Override
+    public void insertBankInfoBatch(List<BwBankInfo> banks) {
+        bankDAO.insertBankInfoBatch(banks);
+
+    }
+
+    @Override
+    public List<BwBankInfo> searchBranch(Integer bankId, String branchName, String district, String state, String ifsc, String micr) {
+        // TODO Auto-generated method stub
+        return bankDAO.searchBranch(bankId, branchName, district, state, ifsc, micr);
+    }
 }

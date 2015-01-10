@@ -29,4 +29,10 @@ public interface BankDAO extends DAOTemplate<BwBankInfo> {
     public List<BwBankInfo> findByIFSC(String ifsc);
 
     public List<BwBankInfo> findByMICR(String micr);
+
+    public List<BwBankInfo> searchBranch(Integer bankId, String branchName, String district, String state, String ifsc, String micr);
+
+    public void insertBankInfo(BwBankInfo bank);
+
+    public void insertBankInfoBatch(List<BwBankInfo> banks);
 }
