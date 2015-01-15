@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<import resource="appServlet/servlet-context.xml"/>
+	<import resource="appServlet/servlet-context.xml" />
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="${hibernate.connection.driver.class}" />
@@ -19,12 +19,23 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.browsewhat.app.db.entities.BwContactus</value>
-				<value>com.browsewhat.app.db.entities.BwModules</value>
-				<value>com.browsewhat.app.db.entities.BwCategory</value>
-				<value>com.browsewhat.app.db.entities.BwBankInfo</value>
 				<value>com.browsewhat.app.db.entities.BwBankBranch</value>
 				<value>com.browsewhat.app.db.entities.BwBankBranchLocationMap</value>
+				<value>com.browsewhat.app.db.entities.BwBankInfo</value>
+				<value>com.browsewhat.app.db.entities.BwCategory</value>
+				<value>com.browsewhat.app.db.entities.BwContactus</value>
+				<value>com.browsewhat.app.db.entities.BwCountries</value>
+				<value>com.browsewhat.app.db.entities.BwLogin</value>
+				<value>com.browsewhat.app.db.entities.BwLoginHistory</value>
+				<value>com.browsewhat.app.db.entities.BwModules</value>
+				<value>com.browsewhat.app.db.entities.BwRoles</value>
+				<value>com.browsewhat.app.db.entities.BwUser</value>
+				<value>com.browsewhat.app.db.entities.BwUserAddress</value>
+				<value>com.browsewhat.app.db.entities.BwUserRole</value>
+				<value>com.browsewhat.app.db.entities.BwVisitorHistory</value>
+				<value>com.browsewhat.app.db.entities.Country</value>
+				<value>com.browsewhat.app.db.entities.District</value>
+				<value>com.browsewhat.app.db.entities.State</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

@@ -2,10 +2,7 @@
 	function loadBankByName(value) {
 		
 		if (value.value.length > 2) {
-			$.get( "bank/search/name.html?name="+value.value, function( data ) {
-				   $("#search_result_name").html( data ); 
-				  
-				});
+			var response = doHttpGetAndAppendToElement("bank/search/name.html?name="+value.value, null, null, '#search_result_name');
 		} else {
 			 $("#search_result_name").html( "" )
 			}

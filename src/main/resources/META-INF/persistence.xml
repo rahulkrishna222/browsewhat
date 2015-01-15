@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="BrowseWhat">
+		<class>com.browsewhat.app.db.entities.BwBankBranch</class>
+		<class>com.browsewhat.app.db.entities.BwBankBranchLocationMap</class>
+		<class>com.browsewhat.app.db.entities.BwBankInfo</class>
+		<class>com.browsewhat.app.db.entities.BwCategory</class>
+		<class>com.browsewhat.app.db.entities.BwContactus</class>
+		<class>com.browsewhat.app.db.entities.BwCountries</class>
+		<class>com.browsewhat.app.db.entities.BwLogin</class>
+		<class>com.browsewhat.app.db.entities.BwLoginHistory</class>
+		<class>com.browsewhat.app.db.entities.BwModules</class>
+		<class>com.browsewhat.app.db.entities.BwRoles</class>
+		<class>com.browsewhat.app.db.entities.BwUser</class>
+		<class>com.browsewhat.app.db.entities.BwUserAddress</class>
+		<class>com.browsewhat.app.db.entities.BwUserRole</class>
+		<class>com.browsewhat.app.db.entities.BwVisitorHistory</class>
+		<class>com.browsewhat.app.db.entities.Country</class>
+		<class>com.browsewhat.app.db.entities.District</class>
+		<class>com.browsewhat.app.db.entities.State</class>
 	</persistence-unit>
 </persistence>

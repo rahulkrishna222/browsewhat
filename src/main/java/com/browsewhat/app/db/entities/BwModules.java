@@ -1,6 +1,6 @@
 package com.browsewhat.app.db.entities;
 
-// Generated Jan 2, 2015 5:42:03 PM by Hibernate Tools 4.3.1
+// Generated Jan 15, 2015 1:30:53 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
 import javax.persistence.Column;

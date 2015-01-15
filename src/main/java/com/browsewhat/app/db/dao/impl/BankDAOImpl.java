@@ -5,6 +5,7 @@ package com.browsewhat.app.db.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -115,7 +116,7 @@ public class BankDAOImpl implements BankDAO {
             Query query = session.createQuery("from BwBankInfo bank where bank.id=:ID");
             query.setInteger("ID", (int) id);
             BwBankInfo bankInfo = (BwBankInfo) query.uniqueResult();
-            if (bankInfo != null && bankInfo.getBwBankBranches().size() != 0 ) {
+            if (bankInfo != null && bankInfo.getBwBankBranches().size() != 0) {
                 int i = 0;
                 for (BwBankBranch branch : bankInfo.getBwBankBranches()) {
                     if (++i == 2) {
@@ -123,7 +124,7 @@ public class BankDAOImpl implements BankDAO {
                     }
                 }
             }
-            return bankInfo; 
+            return bankInfo;
         } catch (Exception e) {
             BWLogger.error("Exception while fetching BankInfo by ID ", e);
         } finally {
@@ -215,7 +216,46 @@ public class BankDAOImpl implements BankDAO {
     }
 
     @Override
-    public List<BwBankInfo> searchBranch(Integer bankId, String branchName, String district, String state, String ifsc, String micr) {
+    public List<BwBankBranch> searchBranch(Integer bankId, String branchName, String district, String state, String ifsc, String micr) {
+        StringBuilder queryString = new StringBuilder(70);
+        queryString.append("from BwBankBranch branch where branch.bwBankInfo.id = :id ");
+        if (branchName != null) {
+            queryString.append("and branch.branch Like :branchName ");
+        }
+        if (district != null ) {
+            queryString.append(" and branch.district Like :district");
+        }
+        if (state != null ) {
+            queryString.append(" and branch.state Like :state");
+        }
+        if (ifsc != null) {
+            queryString.append(" and branch.ifsc Like :ifsc ");
+        }
+
+        Session session = sessionFactory.openSession();
+        // Query query
+        Query query = session.createQuery(queryString.toString());
+        query.setInteger("id", bankId);
+        query.setParameter("branchName", branchName + "%");
+        query.setParameter("district", district + "%");
+        query.setParameter("state", state + "%");
+        query.setParameter("ifsc", ifsc + "%");
+        
+        Transaction txn = session.beginTransaction();
+        try {
+            return query.list();
+        } catch (Exception e) {
+            BWLogger.error("Exception while filtering branches", e);
+        } finally {
+            txn.commit();
+            session.close();
+
+        }
+        return null;
+    }
+
+    @Override
+    public List<BwBankInfo> searchBank(String branchName, String district, String state, String ifsc, String micr) {
         // TODO Auto-generated method stub
         return null;
     }

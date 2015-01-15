@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.browsewhat.app.db.dao.BankDAO;
+import com.browsewhat.app.db.entities.BwBankBranch;
 import com.browsewhat.app.db.entities.BwBankInfo;
 import com.browsewhat.app.db.service.BankService;
 
@@ -111,8 +112,14 @@ public class BankServiceImpl implements BankService {
     }
 
     @Override
-    public List<BwBankInfo> searchBranch(Integer bankId, String branchName, String district, String state, String ifsc, String micr) {
+    public List<BwBankBranch> searchBranch(Integer bankId, String branchName, String district, String state, String ifsc, String micr) {
         // TODO Auto-generated method stub
         return bankDAO.searchBranch(bankId, branchName, district, state, ifsc, micr);
+    }
+
+    @Override
+    public List<BwBankInfo> searchBank(String branchName, String district, String state, String ifsc, String micr) {
+        // TODO Auto-generated method stub
+        return bankDAO.searchBank(branchName, district, state, ifsc, micr);
     }
 }

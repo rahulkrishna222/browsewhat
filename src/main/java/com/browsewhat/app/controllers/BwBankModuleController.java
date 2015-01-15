@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.browsewhat.app.db.entities.BwBankBranch;
 import com.browsewhat.app.db.entities.BwBankInfo;
 import com.browsewhat.app.db.service.BankService;
 import com.browsewhat.app.utils.BWLogger;
@@ -71,22 +72,19 @@ public class BwBankModuleController {
     }
 
     @RequestMapping(value = "search/filter/{bankId}", method = RequestMethod.POST)
-    public void searchBank(@PathVariable("BankId") String bankId, @RequestParam String branchName, @RequestParam String state,
-            @RequestParam String district, @RequestParam String ifsc, Model model) {
+    public ResponseEntity<String> searchBank(@PathVariable("bankId") String bankId, @RequestParam("branchName") String branchName, @RequestParam("state") String state,
+            @RequestParam("district")  String district, @RequestParam("ifsc")  String ifsc) {
         // TODO Validate input
 
-        bankService.searchBranch(BankReferenceLookupGenerator.reverseBankRefKey(bankId), branchName, district, state, ifsc, null);
+        List<BwBankBranch> branches = bankService.searchBranch(BankReferenceLookupGenerator.reverseBankRefKey(bankId), branchName, district, state, ifsc, null);
         
-        model.addAttribute("BankId", bankId);
-        BwBankInfo bankInfo = bankService.find(originalBankId);
-        if (bankInfo != null) {
-            model.addAttribute("bankName", bankInfo.getBankName());
-            if (bankInfo.getBwBankBranches() != null) {
-                model.addAttribute("bankBbranchSize", bankInfo.getBwBankBranches().size());
-                model.addAttribute("Branches", BankSearchResultHtmlGenerator.createBankSearchResultForHtmlPage(bankInfo.getBwBankBranches()));
-            }
+        //model.addAttribute("BankId", bankId);
+
+        if (branches != null) {
+            return new ResponseEntity<String>(BankSearchResultHtmlGenerator.createBankSearchResultForHtmlPage(branches, "TD"), HttpStatus.OK);
+          
         } else {
-            return "bank-service";
+            return new ResponseEntity<String>("<TR><TD> No Records found</TD></TR>", HttpStatus.NOT_FOUND);
         }
     }
 

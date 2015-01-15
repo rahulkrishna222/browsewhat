@@ -28,15 +28,16 @@
 							<h2>${bankName}</h2>
 							<h4>Total Branchs ${bankBbranchSize}</h4>
 						</header>
-						<table  border="1" style="width:300px">
+						<table  border="1" style="width:300px" id="searchResults">
 							<thead>
 								<tr>
 									<td><input type="text" id="txtBranch"
 										value="Type branch Name to filter" data-constant = "Type branch Name to filter" onclick="clearTextOnClick(this)" onblur="loadTextOnBlurIfEmpty(this)"/>&nbsp</td>
-									<td><input id="txtDistrict" data-constant = 'Type district to filter' onclick="clearTextOnClick(this)" onblur="loadTextOnBlurIfEmpty(this)"	value="Type district to filter" /></td>
-									<td><input id="txtState" data-constant ='Type state Name to filter' onclick="clearTextOnClick(this)" onblur="loadTextOnBlurIfEmpty(this)" value="Type state Name to filter"  /></td>
-									<td><input type="text"  data-constant ='IFSC' value='IFSC' id="txtIFSC" onclick="clearTextOnClick(this)" onblur="loadTextOnBlurIfEmpty(this)" /></td>
-									<td><button > Filter </button></td>
+									<td><input type="text" id="txtDistrict" data-constant = 'Type district to filter' onclick="clearTextOnClick(this)" onblur="loadTextOnBlurIfEmpty(this)"	value="Type district to filter" /></td>
+									<td><input type="text" id="txtState" data-constant ='Type state Name to filter' onclick="clearTextOnClick(this)" onblur="loadTextOnBlurIfEmpty(this)" value="Type state Name to filter"  /></td>
+									<td><input type="text" id="txtIfsc" data-constant ='IFSC' value='IFSC' id="txtIFSC" onclick="clearTextOnClick(this)" onblur="loadTextOnBlurIfEmpty(this)" /></td>
+									<td><button onclick="filterBranch('#searchResults tbody','${BankId}', '#txtBranch', '#txtDistrict', '#txtState', '#txtIfsc')"> Filter </button></td>
+									
 								</tr>
 								<tr>
 									<td>Branch Name</td>
@@ -46,6 +47,7 @@
 									<td>IFSC</td>
 								</tr>
 							</thead>
+							<tbody>
 							<c:forEach var="branch" items="${Branches}">
 								<tr>
 									<td>${branch.BranchName}</td>
@@ -55,7 +57,9 @@
 									<td>${branch.BranchIFSC}</td>
 								</tr>
 							</c:forEach>
+							</tbody>
 						</table>
+						<button onclick="window.history.back();" > Go Back </button>
 					</div>
 				</section>
 
