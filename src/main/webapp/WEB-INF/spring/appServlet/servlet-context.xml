@@ -34,8 +34,8 @@
 	</beans:bean>
 	<!-- Ehcache library setup -->
 	<beans:bean id="ehcache"
-		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" p:shared="true"
-		p:config-location="classpath:ehcache-browsewhat.xml">
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"
+		p:shared="true" p:config-location="classpath:ehcache-browsewhat.xml">
 	</beans:bean>
 	<beans:bean
 		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
@@ -61,4 +61,8 @@
 		class="com.browsewhat.app.db.dao.impl.BrowseWhatServicesDAOImpl"></beans:bean>
 	<beans:bean name="browseWhatServicesServiceImpl"
 		class="com.browsewhat.app.db.service.impl.BrowseWhatServicesServiceImpl"></beans:bean>
+	<beans:bean name="staticDataDao"
+		class="com.browsewhat.app.db.dao.impl.StaticDataDAOImpl"></beans:bean>
+	<beans:bean name="staticDataService"
+		class="com.browsewhat.app.db.service.impl.StaticDataServiceImpl"></beans:bean>
 </beans:beans>

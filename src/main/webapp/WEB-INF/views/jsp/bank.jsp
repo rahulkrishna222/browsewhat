@@ -1,11 +1,21 @@
 <script type="text/javascript">
+	$(document).ready(function() {
+		loadStatesSelect('#ddlSelectState');
+		loadStatesSelect('#ddlSelectStateFilter');
+		loadDistrictsSelect('#ddlSelectState', '#ddlSelectDistrict')
+		loadDistrictsSelect('#ddlSelectStateFilter', '#ddlSelectDistrictFilter')
+		//loadDistrictsSelect('#ddlSelectState', "ddlSelectDistrict");
+	});
+	
 	function loadBankByName(value) {
-		
+
 		if (value.value.length > 2) {
-			var response = doHttpGetAndAppendToElement("bank/search/name.html?name="+value.value, null, null, '#search_result_name');
+			var response = doHttpGetAndAppendToElement(
+					"bank/search/name.html?name=" + value.value, null, null,
+					'#search_result_name');
 		} else {
-			 $("#search_result_name").html( "" )
-			}
+			$("#search_result_name").html("")
+		}
 	}
 </script>
 <!-- Features -->
@@ -24,10 +34,8 @@
 								<br /> <input type="text" name="txtBankName"
 									oninput="loadBankByName(this)">
 								<div align="center">
-									<br /> 
-									<div id="search_result_name">
-										
-									</div>
+									<br />
+									<div id="search_result_name"></div>
 								</div>
 							</div>
 						</header>
@@ -47,12 +55,12 @@
 						<table>
 							<tr>
 								<td>
-									<p>States</p> <select>
+									<p>States</p> <select id="ddlSelectState" onchange="loadDistrictsSelect(this, '#ddlSelectDistrict')" data-loaded="false">
 										<option>Choose a State from the list</option>
 								</select>
 								</td>
 								<td>
-									<p>District</p> <select>
+									<p>District</p> <select id="ddlSelectDistrict" data-loaded='false' onClick="">
 										<option>Choose a District from the list</option>
 								</select>
 								</td>
@@ -63,9 +71,7 @@
 										<option>Choose a City from the list</option>
 								</select>
 								</td>
-								<td><br />
-								<br />
-								<input type="button" value="Search" /></td>
+								<td><br /> <br /> <input type="button" value="Search" /></td>
 							</tr>
 						</table>
 
@@ -96,7 +102,7 @@
 								</td>
 								<td></td>
 								<td>
-									<p>States</p> <select>
+									<p>States</p> <select id="ddlSelectStateFilter" data-loaded="false" onchange="loadDistrictsSelect(this, '#ddlSelectDistrictFilter')">
 										<option>Choose a State from the list</option>
 								</select>
 								</td>
@@ -108,7 +114,7 @@
 								</td>
 								<td></td>
 								<td>
-									<p>District</p> <select>
+									<p>District</p> <select id="ddlSelectDistrictFilter" data-loaded='false'>
 										<option>Choose a District from the list</option>
 								</select>
 								</td>
